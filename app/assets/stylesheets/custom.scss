@@ -1,6 +1,11 @@
 /* mixins, variables, etc. */
 $gray-light: #777;
 $gray-darker: #222;
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
 /* universal */
 body {
@@ -59,5 +64,67 @@ footer {
   }
   ul li {
       margin-left: 15px;
+  }
+}
+
+/* miscellaneous */
+.debug_dump {
+  display: block;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 50px;
+}
+
+/* sidebar */
+aside {
+  section.user_info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 10px;
+    }
+  }
+}
+
+/* forms */
+form input,
+form textarea,
+form select,
+form .uneditable-input {
+    border: 1px solid #eee;
+    background-color: #eee;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+form input {
+    height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin-bottom: 30px;
   }
 }
