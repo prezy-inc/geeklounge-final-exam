@@ -1,0 +1,6 @@
+<% provide(:title, 'All users') %>
+<h1>ユーザー一覧</h1>
+<ul class="users d-flex justify-content-around flex-wrap pt-3">
+  <%= render @users %>
+</ul>
+<%= will_paginate @users, previous_label: '< 前へ', next_label: '次へ >' %>

@@ -128,3 +128,44 @@ form input {
     margin-bottom: 30px;
   }
 }
+
+/* Users index */
+.users {
+    list-style: none;
+    margin: 0;
+    li {
+        overflow: auto;
+        padding: 20px;
+        width: 30%;
+        img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        h3 {
+            text-decoration: none;
+            color: #000;
+            font-size: 22px;
+        }
+    }
+}
+
+// pagination
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+    li {
+        padding: 10px;
+        a {
+            color: gray;
+            text-decoration: none;
+        }
+    }
+    .active {
+        a {
+            background: #93c9ff;
+            color: #fff;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+    }
+}
