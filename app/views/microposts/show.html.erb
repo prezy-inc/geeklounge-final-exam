@@ -1,0 +1,15 @@
+<div class="row pt-3">
+  <div class= "col-md-10 offset-md-1">
+    <ol class="microposts">
+     <%= render @micropost %>
+    </ol>
+  </div>
+  <div class="col-md-8 offset-md-2">
+    <h4>コメント</h4>
+    <ol class="comments p-0">
+      <%= render @comments %>
+    </ol>
+  <h4>コメントを投稿する</h4>
+  <%= render 'shared/comment_form', comment: @comment %>
+  </div>
+</div>

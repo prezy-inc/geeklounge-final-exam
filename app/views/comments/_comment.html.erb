@@ -1,0 +1,16 @@
+<li class="border-top p-3 mb-2" id="comment-<%= comment.id %>">
+  <%= link_to gravatar_for(comment.user, size: 50), comment.user %>
+  <span class="user"><%= link_to comment.user.name, comment.user %></span>
+
+    <span class="timestamp float-end">
+      <%= time_ago_in_words(comment.created_at) %>
+    </span>
+    <h5><%= comment.content %></h5>
+
+    <% if current_user?(comment.user) %>
+    <div class="text-end">
+      <%= link_to "削除", comment, data: { "turbo-method": :delete,
+                                            turbo_confirm: "本当に削除しますか？" }, class:"text-danger" %>
+    </div>
+    <% end %>
+</li>

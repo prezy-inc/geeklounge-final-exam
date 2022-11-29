@@ -29,3 +29,12 @@ users = User.order(:created_at).take(6)
   content = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| user.microposts.create!(content: content) }
 end
+
+# ユーザーの一部を対象にコメントを生成する
+microposts = Micropost.order(:created_at).take(6)
+5.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each do |user| 
+    microposts.each { |micropost| user.comments.create!(micropost_id: micropost.id, content: content) }
+  end
+end

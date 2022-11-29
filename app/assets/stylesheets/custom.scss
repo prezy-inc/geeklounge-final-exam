@@ -197,3 +197,20 @@ form input[type="file"] {
         object-fit: cover;
     }
 }
+
+//comments
+.comments {
+    list-style: none;
+    a {
+        color: #777;
+        text-decoration: none;
+    }
+    img {
+        border-radius: 50%;
+        width: 20px;
+    }
+    h5 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
