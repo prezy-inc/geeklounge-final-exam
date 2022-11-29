@@ -121,6 +121,11 @@ form input {
     height: auto !important;
 }
 
+form input[type="file"] {
+    background-color: #fff;
+    border: none;
+}
+
 #error_explanation {
   color: red;
   ul {
@@ -167,5 +172,28 @@ form input {
             border-radius: 15px;
             padding: 5px 10px;
         }
+    }
+}
+
+//microposts
+.microposts {
+    list-style: none;
+    a {
+        color: #777;
+        text-decoration: none;
+    }
+    img {
+        border-radius: 50%;
+        width: 20px;
+    }
+    h3 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .post-image {
+        width: 100%;
+        border-radius: 5px;
+        height: 250px;
+        object-fit: cover;
     }
 }

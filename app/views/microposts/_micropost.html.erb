@@ -1,0 +1,22 @@
+<li class="bg-light p-3 mb-2" id="micropost-<%= micropost.id %>">
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="timestamp float-end">
+    <%= time_ago_in_words(micropost.created_at) %>
+  </span>
+  
+  <%= link_to micropost do%>
+    <h3><%= micropost.content %></h3>
+  <% end %>
+  
+  <% if micropost.image.attached? %>
+    <%= image_tag micropost.image, class:"post-image" %>
+  <% end %>
+    
+  <% if current_user?(micropost.user) %>
+    <div class="text-end">
+      <%= link_to "削除", micropost, data: { "turbo-method": :delete,
+                                             turbo_confirm: "本当に削除しますか？" }, class:"text-danger" %>
+    </div>
+  <% end %>
+</li>
