@@ -1,0 +1,13 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <h1><%= link_to @user.name,@user %></h1>
+    <h3 class="text-center"><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users d-flex justify-content-around flex-wrap pt-3">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate previous_label: '< 前へ', next_label: '次へ >' %>
+    <% end %>
+  </div>
+</div>

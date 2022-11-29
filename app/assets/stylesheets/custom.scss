@@ -104,6 +104,35 @@ aside {
   }
 }
 
+.stats {
+    overflow: auto;
+    margin: 10px 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    a {
+        padding: 0 10px;
+        border-left: 1px solid $gray-light;
+        color: gray;
+        text-decoration: none;
+        &:first-child {
+            padding-left: 0;
+            border: 0;
+        }
+        &:hover {
+            color: blue;
+        }
+    }
+    strong {
+        display: block;
+    }
+}
+
+.users.follow {
+    padding: 0;
+}
+
+
 /* forms */
 form input,
 form textarea,
