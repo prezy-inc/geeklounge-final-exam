@@ -163,6 +163,50 @@ form input[type="file"] {
   }
 }
 
+#session_remember_me {
+    display: none;
+}
+
+.form-check-label {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 30px;
+    position: relative;
+    width: auto;
+}
+
+.form-check-label::before {
+    background: #fff;
+    border: 1px solid #231815;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.form-check-label::after {
+    border-right: 3px solid #0d6efd;
+    border-bottom: 3px solid #0d6efd;
+    content: '';
+    display: block;
+    height: 9px;
+    left: 10px;
+    margin-top: -7px;
+    opacity: 0;
+    position: absolute;
+    top: 55%;
+    transform: rotate(45deg);
+    width: 5px;
+}
+
+#session_remember_me:checked+.form-check-label::after {
+    opacity: 1;
+}
 /* Users index */
 .users {
     list-style: none;
