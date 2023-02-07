@@ -14,9 +14,12 @@ gem "turbo-rails",                "1.1.1"
 gem "stimulus-rails",             "1.0.4"
 gem "jbuilder",                   "2.11.5"
 gem "puma",                       "5.6.4"
+gem "font-awesome-rails",         "4.7.0.8"
 gem "bootsnap",                   "1.12.0", require: false
 
 group :development, :test do
+  gem "rspec-rails", "6.0.1"
+  gem "factory_bot_rails", "6.2.0"
   gem "sqlite3", "1.4.2"
   gem "debug",   "1.5.0", platforms: %i[ mri mingw x64_mingw ]
 end
