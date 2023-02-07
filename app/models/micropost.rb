@@ -1,7 +1,6 @@
 class Micropost < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
@@ -10,8 +9,4 @@ class Micropost < ApplicationRecord
                                       message: "に正しいフォーマットを選択してください" },
                       size:         { less_than: 5.megabytes,
                                       message: "は5MB以下のファイルを選択してください" }
-
-  def liked_by?(user)
-    likes.exists?(user_id: user.id)
-  end
 end
