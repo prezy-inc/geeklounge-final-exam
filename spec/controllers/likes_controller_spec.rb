@@ -7,7 +7,7 @@ RSpec.describe LikesController, type: :controller do
       user = User.find(1)
       log_in user
       request.headers["ACCEPT"] = "text/vnd.turbo-stream.html"
-      post :create, params: { micropost_id: 1 }, xhr: true
+      post :create, params: { id: 1 }, xhr: true
       expect(response.content_type).to include "text/vnd.turbo-stream.html"
     end
   end
@@ -18,7 +18,7 @@ RSpec.describe LikesController, type: :controller do
       user = User.find(1)
       log_in user
       request.headers["ACCEPT"] = "text/vnd.turbo-stream.html"
-      post :destroy, params: { micropost_id: 1 }, xhr: true
+      post :destroy, params: { id: 1 }, xhr: true
       expect(response.content_type).to include "text/vnd.turbo-stream.html"
     end
   end

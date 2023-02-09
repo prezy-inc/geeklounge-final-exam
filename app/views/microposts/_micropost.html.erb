@@ -1,4 +1,4 @@
-<li class="bg-light p-3 mb-2" id="micropost-<%= micropost.id %>">
+<li class="micropost-partial bg-light p-3 mb-2" id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="timestamp float-end">

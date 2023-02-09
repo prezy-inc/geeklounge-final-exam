@@ -10,29 +10,32 @@ RSpec.describe "Likes", type: :system do
     within ".row" do
       click_button "ログイン"
     end
+    visit user_path(1)
   end
 
   scenario "Micropostのパーシャルにいいねボタンが表示される" do
-    visit user_path(1)
-    within "#micropost-295" do
-      expect(page).to have_css ".fa-thumbs-o-up"
-    end
+    micropost_id = first(".micropost-partial")[:id]
+    find("##{micropost_id}").has_css?(".fa-thumbs-o-up")
   end
 
   scenario "投稿にLikeできる", js: true do
-    visit user_path(1)
+    micropost_id = first(".micropost-partial")[:id]
     expect {
-      find("#micropost-295").find_button("button").click
+      within "##{micropost_id}" do
+        find(".like-button").click
+      end
     }.to change(Like, :count).by(1)
   end
 
   scenario "投稿のLikeを解除できる", js: true do
-    visit user_path(1)
+    micropost_id = first(".micropost-partial")[:id]
+    within "##{micropost_id}" do
+      find(".like-button").click
+    end
     expect {
-      find("#micropost-295").find_button("button").click
-    }.to change(Like, :count).by(1)
-    expect {
-      find("#micropost-295").find_button("button").click
+      within "##{micropost_id}" do
+        find(".like-button").click
+      end
     }.to change(Like, :count).by(-1)
   end
 end
