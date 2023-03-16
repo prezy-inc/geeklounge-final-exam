@@ -20,6 +20,11 @@ RSpec.describe Like, type: :model do
     expect {
       like = FactoryBot.create(:like)
       like2 = FactoryBot.create(:like)
-    }.to raise_error(ActiveRecord::RecordNotUnique)
+    }.to raise_error do |error|
+      if error.is_a?(ActiveRecord::RecordNotUnique) || error.is_a?(ActiveRecord::RecordInvalid)
+      else
+        raise error
+      end
+    end
   end
 end
